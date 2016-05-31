@@ -1,0 +1,6 @@
+[submodule "modules/Definitions"]
+	path = modules/Definitions
+	url = https://www.github.com/Silexars/Definitions
+[submodule "modules/Data"]
+	path = modules/Data
+	url = https://www.github.com/Silexars/Data
