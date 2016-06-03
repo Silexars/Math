@@ -1,6 +1,6 @@
-[submodule "modules/Definitions"]
-	path = modules/Definitions
-	url = https://www.github.com/Silexars/Definitions
-[submodule "modules/Data"]
-	path = modules/Data
-	url = https://www.github.com/Silexars/Data
+[submodule "modules/VeritasDefinitions"]
+	path = modules/VeritasDefinitions
+	url = https://www.github.com/Silexars/VeritasDefinitions
+[submodule "modules/VeritasData"]
+	path = modules/VeritasData
+	url = https://www.github.com/Silexars/VeritasData
