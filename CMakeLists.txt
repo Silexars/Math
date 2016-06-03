@@ -5,8 +5,8 @@ IF(TARGET ${PROJECT_NAME})
 RETURN()
 ENDIF()
 
-ADD_SUBDIRECTORY(modules/Definitions)
-ADD_SUBDIRECTORY(modules/Data)
+ADD_SUBDIRECTORY(modules/VeritasDefinitions)
+ADD_SUBDIRECTORY(modules/VeritasData)
 
 AUX_SOURCE_DIRECTORY(src SOURCES)
 
