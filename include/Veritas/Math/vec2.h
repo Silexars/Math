@@ -5,6 +5,21 @@
 
 namespace Veritas {
     namespace Math {
+        template <class T>
+        class vec2T {
+            public:
+                vec2T() {}
+                vec2T(T value) : x(value), y(value) {}
+                vec2T(T x, T y) : x(x), y(y) {}
+                T x, y;
+        };
+        typedef vec2T<int32> ivec2;
+        typedef vec2T<uint32> uvec2;
+    }
+}
+
+namespace Veritas {
+    namespace Math {
         class vec2 {
             public:
                 vec2();

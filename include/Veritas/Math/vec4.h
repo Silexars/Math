@@ -6,6 +6,21 @@
 
 namespace Veritas {
     namespace Math {
+        template <class T>
+        class vec4T {
+            public:
+                vec4T() {}
+                vec4T(T value) : x(value), y(value), z(value), w(value) {}
+                vec4T(T x, T y, T z, T w) : x(x), y(y), z(z), w(w) {}
+                T x, y, z, w;
+        };
+        typedef vec4T<int32> ivec4;
+        typedef vec4T<uint32> uvec4;
+    }
+}
+
+namespace Veritas {
+    namespace Math {
         class vec4 {
             public:
                 vec4();

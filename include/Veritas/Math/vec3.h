@@ -6,6 +6,22 @@
 
 namespace Veritas {
     namespace Math {
+        template <class T>
+        class vec3T {
+            public:
+                vec3T() {}
+                vec3T(T value) : x(value), y(value), z(value) {}
+                vec3T(T x, T y, T z) : x(x), y(y), z(z) {}
+                T x, y, z;
+        };
+        typedef vec3T<int32> ivec3;
+        typedef vec3T<uint32> uvec3;
+    }
+}
+
+
+namespace Veritas {
+    namespace Math {
         class Point3;
         class vec3 {
             public:
