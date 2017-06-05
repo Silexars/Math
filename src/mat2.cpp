@@ -40,6 +40,7 @@ void mat2::operator-=(const mat2 &b) {
     m[2] -= b.m[2];
     m[3] -= b.m[3];
 }
+
 void mat2::operator*=(const float32 s) {
     m[0] *= s;
     m[1] *= s;
@@ -50,7 +51,7 @@ void mat2::operator*=(const float32 s) {
 mat2 mat2::operator*(const mat2 &b) const {
     // not tested
     #define E(M, I, J) M[I*2 + J]
-    #define EM(I, J, N) (E(m, I, N)*E(b.m, N, J))
+    #define EM(I, J, N) (E(m, N, J)*E(b.m, I, N))
     #define M(I, J) (EM(I, J, 0) + EM(I, J, 1))
     return mat2(M(0,0), M(0,1),
                 M(1,0), M(1,1));

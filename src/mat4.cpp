@@ -39,8 +39,8 @@ mat4 mat4::identity() {
 
 void mat4::operator*=(const mat4 &b) { *this = operator*(b); }
 mat4 mat4::operator*(const mat4 &b) const {
-    #define E(M, I, J) M[I*4 + J]
-    #define EM(I, J, N) (E(m, I, N)*E(b.m, N, J))
+    #define E(M, I, J) M[I * 4 + J]
+    #define EM(I, J, N) (E(m, N, J) * E(b.m, I, N))
     #define M(I, J) (EM(I, J, 0) + EM(I, J, 1) + EM(I, J, 2) + EM(I, J, 3))
     return mat4(M(0,0), M(0,1), M(0,2), M(0,3),
                 M(1,0), M(1,1), M(1,2), M(1,3),

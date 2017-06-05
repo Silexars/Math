@@ -38,7 +38,7 @@ mat3::mat3(const mat4 &m4) {
 void mat3::operator*=(const mat3 &b) { *this = operator*(b); }
 mat3 mat3::operator*(const mat3 &b) const {
     #define E(M, I, J) M[I*3 + J]
-    #define EM(I, J, N) (E(m, I, N)*E(b.m, N, J))
+    #define EM(I, J, N) (E(m, N, J)*E(b.m, I, N))
     #define M(I, J) (EM(I, J, 0) + EM(I, J, 1) + EM(I, J, 2))
     return mat3(M(0,0), M(0,1), M(0,2),
                 M(1,0), M(1,1), M(1,2),
