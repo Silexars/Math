@@ -15,6 +15,9 @@
 
 namespace Veritas {
     namespace Math {
+	float32 radians(float32 degrees);
+	float32 degrees(float32 radians);
+
         float32 random();
         float32 random(float32 x);
         vec2 random(const vec2& x);

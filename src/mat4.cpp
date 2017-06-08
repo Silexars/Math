@@ -3,6 +3,9 @@
 
 using namespace Veritas::Math;
 
+vec4& mat4::operator[](uint32 index) { return (vec4&) m[index * 4]; }
+const vec4& mat4::operator[](uint32 index) const { return (const vec4&) m[index * 4]; }
+
 mat4::mat4() {}
 mat4::mat4(float32 m00, float32 m01, float32 m02, float32 m03, float32 m10, float32 m11, float32 m12, float32 m13, float32 m20, float32 m21, float32 m22, float32 m23, float32 m30, float32 m31, float32 m32, float32 m33) {
     m[ 0] = m00;
@@ -59,13 +62,12 @@ mat4 mat4::operator*(const float32 s) const {
 }
 
 mat4 mat4::perspective(float32 fov, float32 aspect, float32 near, float32 far) {
-    float32 radians = (PI / 360.0f) * fov;
-    float32 yScale = 1.0/tan(radians);
+    float32 yScale = 1.0/tan(fov);
     float32 nd = near - far;
     return mat4(yScale/aspect,     0.0f,                   0.0f,  0.0f,
                          0.0f,   yScale,                   0.0f,  0.0f,
-                         0.0f,     0.0f,    (far+near)/nd, -1.0f,
-                         0.0f,     0.0f, 2.0f*far*near/nd,  0.0f);
+                         0.0f,     0.0f,          (far+near)/nd, -1.0f,
+                         0.0f,     0.0f,       2.0f*far*near/nd,  0.0f);
 }
 
 mat4 mat4::orthographic(float32 left, float32 right, float32 bottom, float32 top, float32 near, float32 far) {

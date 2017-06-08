@@ -44,6 +44,8 @@ namespace Veritas {
                 static mat4 lookAt(const vec3 &direction, const vec3 &up);
 
                 float32 m[16];
+                vec4& operator[](uint32 index);
+                const vec4& operator[](uint32 index) const;
         };
     }
 }

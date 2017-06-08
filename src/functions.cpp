@@ -1,10 +1,14 @@
 #include <Veritas/Math/functions.h>
+#include <Veritas/Math/Math.h>
 
 #include <cmath>
 #include <cstdlib>
 
 using namespace Veritas;
 using namespace Math;
+
+float32 Math::radians(float32 degrees) { return (PI / 360.0) * degrees; }
+float32 Math::degrees(float32 radians) { return  radians*(360.0/PI); }
 
 Complex Math::conjugate(const Complex &c) { return Complex(c.a, -c.b); }
 Quaternion Math::conjugate(const Quaternion &q) { return Quaternion(q.a, -q.b, -q.c, -q.d); }
