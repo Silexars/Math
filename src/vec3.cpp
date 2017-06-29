@@ -41,7 +41,11 @@ bool vec3::operator!=(const vec3& v) const { return x != v.x || y != v.y || z !=
 
 vec3 operator*(const float32 s, const vec3& v) { return v*s; }
 
+float32& vec3::operator[](uint32 index) { return ((float32*) &x)[index]; }
+const float32 vec3::operator[](uint32 index) const { return ((const float32*) &x)[index]; }
+
 std::ostream& operator<<(std::ostream &os, const vec3& v) {
     os << '(' << v.x << ", " << v.y << ", " << v.z << ")";
     return os;
 }
+

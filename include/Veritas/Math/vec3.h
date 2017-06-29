@@ -64,6 +64,8 @@ namespace Veritas {
                 bool operator==(const vec3& v) const;
 
                 float32 x, y, z;
+                float32& operator[](uint32 index);
+                const float32 operator[](uint32 index) const;
         };
     }
 }

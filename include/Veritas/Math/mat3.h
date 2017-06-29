@@ -43,6 +43,8 @@ namespace Veritas {
                 static mat3 lookAt(const vec3 &direction, const vec3 &up);
 
                 float32 m[9];
+                vec3& operator[](uint32 index);
+                const vec3& operator[](uint32 index) const;
         };
     }
 }

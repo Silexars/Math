@@ -123,3 +123,6 @@ mat3 mat3::lookAt(const vec3 &direction, const vec3 &up) {
 }
 
 mat3 operator*(const float32 s, const mat3& m) { return m*s; }
+
+vec3& mat3::operator[](uint32 index) { return ((vec3*) m)[index]; }
+const vec3& mat3::operator[](uint32 index) const { return ((const vec3*) m)[index]; }
