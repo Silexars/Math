@@ -17,5 +17,3 @@
 
 #include "Complex.h"
 #include "Quaternion.h"
-
-#include "Set.h"
