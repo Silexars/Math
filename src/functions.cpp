@@ -7,8 +7,8 @@
 using namespace Veritas;
 using namespace Math;
 
-float32 Math::radians(float32 degrees) { return (PI / 360.0) * degrees; }
-float32 Math::degrees(float32 radians) { return  radians*(360.0/PI); }
+float32 Math::radians(float32 degrees) { return ((float32) PI / 360.0f) * degrees; }
+float32 Math::degrees(float32 radians) { return  radians*(360.0f / (float32) PI); }
 
 Complex Math::conjugate(const Complex &c) { return Complex(c.a, -c.b); }
 Quaternion Math::conjugate(const Quaternion &q) { return Quaternion(q.a, -q.b, -q.c, -q.d); }
@@ -333,7 +333,7 @@ mat4 Math::inverse(const mat4 &m) {
                               0.0, 0.0, 0.0, 0.0,
                               0.0, 0.0, 0.0, 0.0,
                               0.0, 0.0, 0.0, 0.0);
-    det = 1.0 / det;
+    det = 1.0f / det;
     return mat4(inv[ 0], inv[ 1], inv[ 2], inv[ 3],
                 inv[ 4], inv[ 5], inv[ 6], inv[ 7],
                 inv[ 8], inv[ 9], inv[10], inv[11],
@@ -356,3 +356,9 @@ vec3 Math::slerp(const vec3 &start, const vec3 &end, float32 x) {
     vec3 relativePath = normalize(end - start * d);
     return start * cos(a) + relativePath * sin(a);
 }
+
+float32 Math::sqrt(float32 x) { return ::sqrtf(x); }
+float64 Math::sqrt(float64 x) { return ::sqrt(x); }
+vec2 Math::sqrt(const vec2 &v) { return vec2(sqrt(v.x), sqrt(v.y)); }
+vec3 Math::sqrt(const vec3 &v) { return vec3(sqrt(v.x), sqrt(v.y), sqrt(v.z)); }
+vec4 Math::sqrt(const vec4 &v) { return vec4(sqrt(v.x), sqrt(v.y), sqrt(v.z), sqrt(v.w)); }

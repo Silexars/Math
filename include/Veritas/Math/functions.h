@@ -165,5 +165,11 @@ namespace Veritas {
         vec4 cos(const vec4& x);
 
         vec3 slerp(const vec3& start, const vec3& end, float32 x);
+
+        float32 sqrt(float32 x);
+        float64 sqrt(float64 x);
+        vec2 sqrt(const vec2& sqrt);
+        vec3 sqrt(const vec3& sqrt);
+        vec4 sqrt(const vec4& sqrt);
     }
 }
