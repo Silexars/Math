@@ -362,3 +362,9 @@ float64 Math::sqrt(float64 x) { return ::sqrt(x); }
 vec2 Math::sqrt(const vec2 &v) { return vec2(sqrt(v.x), sqrt(v.y)); }
 vec3 Math::sqrt(const vec3 &v) { return vec3(sqrt(v.x), sqrt(v.y), sqrt(v.z)); }
 vec4 Math::sqrt(const vec4 &v) { return vec4(sqrt(v.x), sqrt(v.y), sqrt(v.z), sqrt(v.w)); }
+
+float32 Math::tan(float32 x) { return ::tanf(x); }
+float64 Math::tan(float64 x) { return ::tan(x); }
+vec2 Math::tan(const vec2 &v) { return vec2(tan(v.x), tan(v.y)); }
+vec3 Math::tan(const vec3 &v) { return vec3(tan(v.x), tan(v.y), tan(v.z)); }
+vec4 Math::tan(const vec4 &v) { return vec4(tan(v.x), tan(v.y), tan(v.z), tan(v.w)); }

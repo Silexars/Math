@@ -171,5 +171,11 @@ namespace Veritas {
         vec2 sqrt(const vec2& sqrt);
         vec3 sqrt(const vec3& sqrt);
         vec4 sqrt(const vec4& sqrt);
+
+        float32 tan(float32 x);
+        float64 tan(float64 x);
+        vec2 tan(const vec2 &v);
+        vec3 tan(const vec3 &v);
+        vec4 tan(const vec4 &v);
     }
 }

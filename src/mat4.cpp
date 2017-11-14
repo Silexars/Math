@@ -62,7 +62,7 @@ mat4 mat4::operator*(const float32 s) const {
 }
 
 mat4 mat4::perspective(float32 fov, float32 aspect, float32 near, float32 far) {
-    float32 yScale = 1.0/tan(fov);
+    float32 yScale = 1.0f / tan(fov);
     float32 nd = near - far;
     return mat4(yScale/aspect,     0.0f,                   0.0f,  0.0f,
                          0.0f,   yScale,                   0.0f,  0.0f,
